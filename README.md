@@ -84,17 +84,21 @@ foreach (var i in List.projects)
 ```
 - Get specific project:
 ```csharp
-var projectInfo = await asd.GetProjectInfoAsync(IDProject: "ID Project");
-Console.WriteLine(projects.Id);
-Console.WriteLine(projects.IsBan);
-Console.WriteLine(projects.ProjectVersion);
+var Init = new Autobuy.License.Projects();
+var projectInfo = await Init.GetProjectInfoAsync(IDProject: "ID Project");
+Console.WriteLine(projectInfo.Id);
+Console.WriteLine(projectInfo.IsBan);
+Console.WriteLine(projectInfo.ProjectVersion);
 (...)
 ```
 ### License control:
-- Create licenses
+- Initialize
 ```csharp
 var control = new Licensing(projectID: "Project ID", projectName: "Project Name");
+```
 
+- Create licenses
+```csharp
 var licenseInfo = new LicenseInfo()
 {
     Email = "Email@email.com",
@@ -114,12 +118,10 @@ bool sameHWID = await control.verifyHwidAsync("license key")
 ```
 - Login:
 ```csharp
-bool logIn = await asd.AuthKeyAsync(licenseKey: licenseKey)
+bool logIn = await control.AuthKeyAsync(licenseKey: licenseKey)
 ```
 
 Any bug or problem, let me know and I will update.
 
-### Contributions:
-- https://t.me/biitez | biitez#1717
-
-- If you want to improve the project, just pull request
+### Credits:
+- https://t.me/biitez | biitez#8568
