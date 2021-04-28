@@ -1,8 +1,17 @@
 # Autobuy.API
 Unofficial asynchronous library written in .NET Framework that interacts with AutoBuy.IO API
 
-This library uses only asynchronous methods, it is also using the latest autobuy API (https://api.autobuy.io)
+This library uses the latest autobuy API (https://api.autobuy.io)
 To find your API key, just go to your shop settings!
+
+
+### Note:
+If you need to use it synchronously, put a .Result at the end of an asynchronous method, e.g .
+
+```csharp
+var allOrders = await autobuy.GetOrdersAsync(page: 1); // asynchronous
+var allOrders = autobuy.GetOrdersAsync(page: 1).Result; // synchronous
+```
 
 ### Usage:
 ```csharp
@@ -10,6 +19,8 @@ var autobuy = new API("Your API Key");
 ```
 
 ## Available API Endpoints
+
+
 ### Orders:
 - Get All Orders:
 ```csharp
