@@ -135,4 +135,4 @@ bool logIn = await control.AuthKeyAsync(licenseKey: licenseKey)
 Any bug or problem, let me know and I will update.
 
 ### Credits:
-- https://t.me/biitez | biitez#8568
+- https://t.me/biitez | bitez#5477
